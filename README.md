@@ -1,7 +1,6 @@
 # flutter_inherited_widget_2
 
-A new Flutter project.
-
+A new Flutter project. I this project i used inherited widget to pass the information down the tree. Inherited Widget is a type of widget which allows us to pass information down towrds tree to its child. It is a simple implementation of inherited widget.
 ## Getting Started
 
 This project is a starting point for a Flutter application.
