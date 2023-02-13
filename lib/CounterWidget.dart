@@ -14,24 +14,30 @@ class CounterWidget extends StatefulWidget {
 class _CounterWidgetState extends State<CounterWidget> {
   @override
   Widget build(BuildContext context) {
-    return SizedBox.expand(
-      child: GestureDetector(
-        child: Center(
-          child: Text(
-            // Getting data from inherited widget
-            CounterInherited.of(context).count.toString(),
-            style: const TextStyle(
-              fontSize: 20,
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Counter with Inherited WIdget"),
+      ),
+      body: SizedBox.expand(
+        child: GestureDetector(
+          child: Center(
+            child: Text(
+              // Getting data from inherited widget
+              CounterInherited.of(context).count.toString(),
+              style: const TextStyle(
+                fontSize: 20,
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ),
-        onTap: () {
-// Using state object using inherited widget and doing increment in count value of statful widget
-// which wraps InheritedWidget in it.
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
           CounterInherited.of(context).increment();
         },
+        child: const Icon(Icons.add),
       ),
     );
   }
